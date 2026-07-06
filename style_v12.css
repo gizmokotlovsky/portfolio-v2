@@ -1,0 +1,302 @@
+:root {
+  --ink: #f4f0f2;
+  --muted: rgba(244,240,242,.72);
+  --soft: rgba(244,240,242,.88);
+  --aubergine: #8b5f82;
+  --aubergine-deep: rgba(71, 34, 67, .24);
+  --panel: rgba(0, 0, 0, .30);
+  --line: rgba(255,255,255,.10);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Arial Narrow", "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(139,95,130,.18), transparent 26%),
+    radial-gradient(circle at 86% 18%, rgba(255,255,255,.045), transparent 18%),
+    linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.78)),
+    url("assets/background/black-brick.jpg") center top / cover fixed no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.48) 0%, rgba(0,0,0,.12) 46%, rgba(0,0,0,.50) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.38) 100%);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 62px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5,5,6,.42);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(255,255,255,.05));
+}
+.brand span { display: flex; flex-direction: column; line-height: 1.04; }
+.brand strong { font-size: 11px; font-weight: 600; letter-spacing: .32em; color: rgba(255,255,255,.92); }
+.brand small { margin-top: 3px; font-size: 8px; color: rgba(255,255,255,.54); letter-spacing: .26em; }
+
+nav { display: flex; gap: 30px; }
+nav a {
+  color: rgba(255,255,255,.88);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: .30em;
+}
+nav a:hover { color: #fff; }
+
+.section {
+  padding: 118px 0 32px;
+}
+.first-section { padding-top: 108px; }
+
+.section-head {
+  width: min(1480px, calc(100vw - 72px));
+  margin: 0 auto 52px;
+}
+
+.section-head h1,
+.section-head h2 {
+  margin: 0 0 30px;
+  color: var(--aubergine);
+  font-size: clamp(30px, 3.2vw, 50px);
+  line-height: .98;
+  font-weight: 300;
+  letter-spacing: .22em;
+  text-shadow: 0 0 32px rgba(139,95,130,.24);
+}
+
+.section-head p {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 0 15px;
+  color: rgba(255,255,255,.88);
+  font-size: 12px;
+  line-height: 1.9;
+  font-weight: 600;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+}
+.section-head p:last-of-type { margin-bottom: 0; }
+
+.glass-panel {
+  position: relative;
+  width: min(1600px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: 28px 26px;
+  overflow: hidden;
+
+  /* glass veil: transparent, not a filled block */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.070), rgba(255,255,255,.010)),
+    linear-gradient(90deg, rgba(0,0,0,.20), rgba(65,32,61,.18), rgba(0,0,0,.16));
+  border: 1px solid rgba(255,255,255,.10);
+
+  backdrop-filter: blur(12px) saturate(1.15);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+
+  box-shadow:
+    0 28px 86px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 0 -1px 0 rgba(0,0,0,.22);
+}
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 28% 0%, rgba(255,255,255,.09), transparent 18%),
+    radial-gradient(circle at 50% 50%, rgba(139,95,130,.13), transparent 46%),
+    linear-gradient(90deg, rgba(0,0,0,.16), transparent 20%, transparent 82%, rgba(0,0,0,.14));
+  opacity: .86;
+}
+.glass-panel::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
+  opacity: .45;
+}
+
+.filmstrip {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 5px 0;
+}
+.filmstrip::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+.strip-item {
+  flex: 0 0 auto;
+  display: block;
+  height: 5cm;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.strip-item img {
+  display: block;
+  height: 5cm;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  filter: grayscale(1) saturate(0) brightness(.82) contrast(1.04);
+  opacity: .82;
+  transition: filter .38s ease, opacity .38s ease, transform .38s ease, box-shadow .38s ease;
+}
+.strip-item:hover img,
+.strip-item:focus-visible img {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(255,255,255,.10);
+}
+
+.paint-item,
+.paint-item img { height: 5cm; }
+
+.video-strip { gap: 16px; }
+.video-slot {
+  flex: 0 0 360px;
+  height: 5cm;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.72);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.050), rgba(255,255,255,.006)),
+    rgba(0,0,0,.12);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+.video-slot span {
+  font-size: 12px;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contact { padding-bottom: 120px; }
+.mail {
+  display: inline-block;
+  margin-top: 28px;
+  color: rgba(255,255,255,.94);
+  font-size: clamp(17px, 1.8vw, 26px);
+  text-decoration: none;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.mail:hover { color: #fff; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.lightbox.open { display: flex; }
+.lb-image {
+  display: block;
+  max-width: min(92vw, 20cm);
+  max-height: min(88vh, 20cm);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: 0 18px 90px rgba(0,0,0,.65);
+}
+.lb-close,
+.lb-nav {
+  position: fixed;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.82);
+  cursor: pointer;
+  font-family: inherit;
+}
+.lb-close {
+  top: 18px;
+  right: 24px;
+  font-size: 36px;
+  line-height: 1;
+}
+.lb-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 54px;
+  line-height: 1;
+  padding: 22px;
+}
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-close:hover,
+.lb-nav:hover { color: #fff; }
+
+@media (max-width: 860px) {
+  body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Arial Narrow", "Helvetica Neue Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(139,95,130,.18), transparent 26%),
+    radial-gradient(circle at 86% 18%, rgba(255,255,255,.045), transparent 18%),
+    linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.78)),
+    url("assets/background/black-brick.jpg") center top / cover fixed no-repeat;
+}
