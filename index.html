@@ -6,7 +6,582 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>kotlovsky creative studio</title>
   <meta name="description" content="kotlovsky creative studio — graphics, audio, video and painting.">
-  <link rel="stylesheet" href="style.css?v=22">
+  <style>
+/* =========================================================
+   KOTLOVSKY PORTFOLIO — v23 PACK SINGLE FILE CSS
+   ========================================================= */
+
+:root {
+  --ink: #f4f0f2;
+  --muted: rgba(244, 240, 242, .68);
+  --soft: rgba(244, 240, 242, .90);
+  --aubergine: #8b5f82;
+  --aubergine-light: #b584aa;
+  --panel: rgba(0, 0, 0, .18);
+  --line: rgba(255, 255, 255, .10);
+  --page-width: min(1600px, calc(100vw - 56px));
+  --content-width: min(1160px, calc(100vw - 56px));
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.65;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(139, 95, 130, .085), transparent 25%),
+    radial-gradient(circle at 86% 18%, rgba(139, 95, 130, .060), transparent 22%),
+    linear-gradient(180deg, rgba(0, 0, 0, .52), rgba(0, 0, 0, .73)),
+    url("assets/background/black-brick.jpg") center top / cover fixed no-repeat;
+  background-color: #050505;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, .34) 46%, rgba(0, 0, 0, .66) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, .18) 0%, rgba(0, 0, 0, .56) 100%);
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 62px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 5, 6, .62);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand img,
+.site-header .brand img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin-right: 14px;
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, .05));
+}
+
+.brand span {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 10px;
+  line-height: 1;
+}
+
+.brand strong {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .34em;
+  color: rgba(255, 255, 255, .94);
+}
+
+.brand small {
+  margin-top: 0;
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .54);
+  letter-spacing: .24em;
+}
+
+nav { display: flex; gap: 30px; }
+nav a {
+  color: rgba(255, 255, 255, .88);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .30em;
+}
+nav a:hover { color: #fff; }
+
+/* SECTIONS */
+.section { padding: 104px 0 34px; }
+.first-section { padding-top: 98px; }
+
+.section-head {
+  width: var(--content-width);
+  margin: 0 auto 38px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.section-head h1,
+.section-head h2 {
+  position: relative;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 18px 28px 16px;
+  color: var(--aubergine);
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: .98;
+  font-weight: 300;
+  letter-spacing: .22em;
+  text-align: left;
+  text-shadow: 0 0 32px rgba(139, 95, 130, .24);
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .36), rgba(0, 0, 0, .14) 48%, rgba(0, 0, 0, 0)),
+    radial-gradient(circle at 10% 50%, rgba(139, 95, 130, .13), transparent 48%);
+  border-left: 1px solid rgba(139, 95, 130, .26);
+  border-bottom: 1px solid rgba(255, 255, 255, .035);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.section-head p,
+.section p,
+.contact p {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, .90);
+  font-size: 15.5px;
+  line-height: 1.78;
+  font-weight: 500;
+  letter-spacing: .026em;
+  text-transform: uppercase;
+  text-align: left;
+}
+.section-head p:last-of-type { margin-bottom: 0; }
+
+/* GLASS + FILMSTRIPS */
+.glass-panel {
+  position: relative;
+  width: var(--page-width);
+  margin: 0 auto;
+  padding: 22px 24px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .026), rgba(255, 255, 255, .006)),
+    rgba(0, 0, 0, .18);
+  border: 1px solid rgba(255, 255, 255, .055);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, .16), inset 0 0 0 1px rgba(255, 255, 255, .018);
+}
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 38% 15%, rgba(139, 95, 130, .08), transparent 36%),
+    linear-gradient(90deg, rgba(255, 255, 255, .018), transparent 20%, transparent 82%, rgba(255, 255, 255, .012));
+  opacity: .65;
+}
+.glass-panel::after,
+.filmstrip::before,
+.filmstrip::after { display: none !important; content: none !important; }
+
+.filmstrip {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 5px 0;
+}
+.filmstrip::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+.strip-item {
+  flex: 0 0 auto;
+  display: block;
+  height: 4.15cm;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.strip-item img {
+  display: block;
+  height: 4.15cm;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  filter: grayscale(1) saturate(0) brightness(.88) contrast(1.02);
+  opacity: .80;
+  transition: filter .38s ease, opacity .38s ease, transform .38s ease, box-shadow .38s ease;
+}
+.strip-item:hover img,
+.strip-item:focus-visible img {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(255, 255, 255, .10);
+}
+.paint-item,
+.paint-item img { height: 4.15cm; }
+
+/* VIDEO */
+.video-strip { gap: 14px; }
+.video-slot,
+.video-link {
+  flex: 0 0 calc((100% - 56px) / 5);
+  height: 4.15cm;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, .72);
+  background: rgba(0, 0, 0, .20);
+  border: 1px solid rgba(255, 255, 255, .055);
+  overflow: hidden;
+  text-decoration: none;
+}
+.video-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background: rgba(0, 0, 0, .72);
+  filter: grayscale(1) saturate(.78) brightness(.84) contrast(1.03);
+  opacity: .88;
+  transition: filter .25s ease, opacity .25s ease, transform .25s ease;
+}
+.video-link:hover img {
+  filter: grayscale(0) saturate(1.02) brightness(1) contrast(1);
+  opacity: 1;
+  transform: scale(1.012);
+}
+.video-link::after {
+  content: "▶";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  padding-left: 3px;
+  font-size: 18px;
+  line-height: 1;
+  color: rgba(255, 255, 255, .94);
+  background: rgba(8, 8, 10, .47);
+  border: 1px solid rgba(255, 255, 255, .17);
+  box-shadow: 0 0 18px rgba(0, 0, 0, .25);
+  pointer-events: none;
+  z-index: 6;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.video-link:hover::after {
+  background: rgba(138, 92, 134, .42);
+  border-color: rgba(215, 177, 210, .62);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* CONTACT */
+.contact { padding-bottom: 120px; }
+.contact .section-head { margin-bottom: 34px; }
+.contact .section-head p { display: none; }
+
+.contact-panel {
+  width: var(--content-width);
+  margin: 0 auto 96px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: minmax(170px, 240px) 1fr;
+  gap: 34px;
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .026), rgba(255, 255, 255, .006)),
+    rgba(0, 0, 0, .20);
+  border: 1px solid rgba(255, 255, 255, .055);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, .16), inset 0 0 0 1px rgba(255, 255, 255, .018);
+}
+.contact-logo {
+  min-height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(139, 95, 130, .16), transparent 58%), rgba(0, 0, 0, .16);
+  border: 1px solid rgba(255, 255, 255, .05);
+}
+.contact-logo img {
+  width: min(150px, 72%);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  opacity: .90;
+}
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.contact-copy p {
+  margin: 0 0 14px;
+  max-width: 820px;
+  text-align: left;
+}
+
+.text-link,
+.text-link:link,
+.text-link:visited,
+.text-link:active,
+.text-link:focus,
+.text-link:hover,
+a[href^="mailto:"],
+a[href^="mailto:"]:visited,
+a[href^="mailto:"]:active,
+a[href^="mailto:"]:focus,
+a[href^="mailto:"]:hover {
+  color: var(--aubergine) !important;
+  -webkit-text-fill-color: var(--aubergine) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(139, 95, 130, .70) !important;
+  padding-bottom: 2px;
+  outline: none !important;
+}
+.text-link:hover,
+a[href^="mailto:"]:hover {
+  color: var(--aubergine-light) !important;
+  -webkit-text-fill-color: var(--aubergine-light) !important;
+  border-bottom-color: var(--aubergine-light) !important;
+}
+
+.contact-social {
+  width: auto;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.social-icon,
+.social-icon:link,
+.social-icon:visited,
+.social-icon:active,
+.social-icon:focus {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--aubergine) !important;
+  -webkit-text-fill-color: var(--aubergine) !important;
+  opacity: .95;
+  border: 1px solid rgba(139, 95, 130, .45) !important;
+  border-radius: 999px;
+  outline: 0 !important;
+  background: rgba(12, 10, 14, .24) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .03) inset !important;
+  text-decoration: none !important;
+  transition: color .25s ease, opacity .25s ease, transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.social-icon:hover {
+  color: #d7b1d2 !important;
+  -webkit-text-fill-color: #d7b1d2 !important;
+  border-color: rgba(215, 177, 210, .75) !important;
+  background: rgba(139, 95, 130, .16) !important;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.social-in span {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  text-transform: lowercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.social-yt span {
+  width: 22px;
+  height: 15px;
+  border-radius: 3px;
+  background: currentColor;
+  display: block;
+  position: relative;
+}
+.social-yt span::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 3.5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #050505;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+.social-ig span {
+  width: 19px;
+  height: 19px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  display: block;
+  position: relative;
+}
+.social-ig span::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.social-ig span::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.site-footer,
+.social-footer { display: none !important; }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.lightbox.open { display: flex; }
+.lb-image {
+  display: block;
+  max-width: min(92vw, 20cm);
+  max-height: min(88vh, 20cm);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: 0 18px 90px rgba(0, 0, 0, .65);
+}
+.lb-close,
+.lb-nav {
+  position: fixed;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, .82);
+  cursor: pointer;
+  font-family: inherit;
+}
+.lb-close { top: 18px; right: 24px; font-size: 36px; line-height: 1; }
+.lb-nav { top: 50%; transform: translateY(-50%); font-size: 54px; line-height: 1; padding: 22px; }
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-close:hover,
+.lb-nav:hover { color: #fff; }
+
+/* RESPONSIVE */
+@media (min-width: 1200px) {
+  .section-head p,
+  .section p,
+  .contact p {
+    font-size: 15.5px;
+    line-height: 1.78;
+  }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --page-width: calc(100vw - 28px);
+    --content-width: calc(100vw - 28px);
+  }
+  .site-header { height: 58px; padding: 0 14px; }
+  .brand img,
+  .site-header .brand img { width: 34px; height: 34px; margin-right: 10px; }
+  .brand span { gap: 7px; }
+  .brand strong { font-size: 9.5px; letter-spacing: .24em; }
+  .brand small { font-size: 7px; letter-spacing: .18em; }
+  nav { gap: 16px; }
+  nav a { font-size: 9px; letter-spacing: .22em; }
+  .section { padding: 86px 0 28px; }
+  .first-section { padding-top: 82px; }
+  .section-head { margin: 0 auto 30px; }
+  .section-head h1,
+  .section-head h2 {
+    font-size: clamp(25px, 9vw, 38px);
+    letter-spacing: .18em;
+    margin-bottom: 18px;
+    padding: 16px 18px 14px;
+  }
+  .section-head p,
+  .section p,
+  .contact p {
+    font-size: 14px;
+    line-height: 1.68;
+    letter-spacing: .020em;
+    text-align: left;
+  }
+  .glass-panel { padding: 18px 18px; }
+  .strip-item,
+  .strip-item img,
+  .paint-item,
+  .paint-item img { height: 3.55cm; }
+  .video-slot,
+  .video-link { flex: 0 0 230px; height: 3.55cm; }
+  .contact-panel { grid-template-columns: 1fr; gap: 22px; padding: 22px 20px; }
+  .contact-logo { min-height: 130px; }
+  .contact-logo img { width: min(130px, 54%); }
+  .contact-social { gap: 16px; }
+  .social-icon,
+  .social-icon:link,
+  .social-icon:visited,
+  .social-icon:active,
+  .social-icon:focus { width: 40px; height: 40px; }
+}
+
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -158,13 +733,23 @@
     <section id="contact" class="section contact">
       <div class="section-head">
         <h2>contact</h2>
-        <p>kotlovsky is a small creative studio by Aleksandra Warecka, moving between graphic design, AI media, image, sound and unfinished ideas that still want to become something visible.</p>
-        <p>For questions, collaboration or quiet creative experiments, <a class="text-link" href="mailto:gizmokotlovsky@gmail.com" style="color:#8b5f82;-webkit-text-fill-color:#8b5f82;text-decoration:none;border-bottom:1px solid rgba(139,95,130,.70);">write me</a>.</p>
       </div>
-      <div class="contact-social" aria-label="social links">
-        <a class="social-icon social-in" href="https://www.linkedin.com/in/aleksandrawarecka" target="_blank" rel="noopener" aria-label="LinkedIn"><span>in</span></a>
-        <a class="social-icon social-yt" href="https://www.youtube.com/channel/UCL8M-zdosP2IWj9CVefcoIw/videos" target="_blank" rel="noopener" aria-label="YouTube"><span></span></a>
-        <a class="social-icon social-ig" href="https://www.instagram.com/gizmokotlovsky/" target="_blank" rel="noopener" aria-label="Instagram"><span></span></a>
+
+      <div class="contact-panel">
+        <div class="contact-logo" aria-hidden="true">
+          <img src="assets/logo/kotlovsky-lens.png" alt="">
+        </div>
+
+        <div class="contact-copy">
+          <p>kotlovsky is a small creative studio by Aleksandra Warecka, moving between graphic design, AI media, image, sound and unfinished ideas that still want to become something visible.</p>
+          <p>For questions, collaboration or quiet creative experiments, <a class="text-link" href="mailto:gizmokotlovsky@gmail.com">write me</a>.</p>
+
+          <div class="contact-social" aria-label="social links">
+            <a class="social-icon social-in" href="https://www.linkedin.com/in/aleksandrawarecka" target="_blank" rel="noopener" aria-label="LinkedIn"><span>in</span></a>
+            <a class="social-icon social-yt" href="https://www.youtube.com/channel/UCL8M-zdosP2IWj9CVefcoIw/videos" target="_blank" rel="noopener" aria-label="YouTube"><span></span></a>
+            <a class="social-icon social-ig" href="https://www.instagram.com/gizmokotlovsky/" target="_blank" rel="noopener" aria-label="Instagram"><span></span></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -175,6 +760,6 @@
     <button class="lb-nav lb-next" type="button" aria-label="next">›</button>
   </div>
 
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=23"></script>
 </body>
 </html>
