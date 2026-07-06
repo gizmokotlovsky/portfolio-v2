@@ -23,7 +23,7 @@ body {
   background:
     radial-gradient(circle at 12% 12%, rgba(139,95,130,.18), transparent 26%),
     radial-gradient(circle at 86% 18%, rgba(255,255,255,.045), transparent 18%),
-    linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.78)),
+    linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.66)),
     url("assets/background/black-brick.jpg") center top / cover fixed no-repeat;
 }
 
@@ -34,8 +34,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.48) 0%, rgba(0,0,0,.12) 46%, rgba(0,0,0,.50) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.38) 100%);
+    linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.24) 46%, rgba(0,0,0,.60) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.48) 100%);
 }
 
 .site-header {
@@ -287,7 +287,7 @@ nav a:hover { color: #fff; }
   background:
     radial-gradient(circle at 12% 12%, rgba(139,95,130,.18), transparent 26%),
     radial-gradient(circle at 86% 18%, rgba(255,255,255,.045), transparent 18%),
-    linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.78)),
+    linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.66)),
     url("assets/background/black-brick.jpg") center top / cover fixed no-repeat;
 }
 
@@ -573,10 +573,11 @@ a:focus, button:focus { outline-color: rgba(139,95,130,.55); }
 
 @media (max-width: 860px) {
   .section-head {
-    width: calc(100vw - 28px);
-    padding-left: 4px;
-    padding-right: 4px;
-  }
+  width: min(1600px, calc(100vw - 56px));
+  margin: 0 auto 38px;
+  padding-left: clamp(48px, 6vw, 118px);
+  padding-right: clamp(48px, 6vw, 118px);
+}
   .glass-panel {
     width: calc(100vw - 28px);
   }
@@ -587,5 +588,177 @@ a:focus, button:focus { outline-color: rgba(139,95,130,.55); }
     width: calc(100vw - 28px);
     justify-content: flex-start;
     padding: 0;
+  }
+}
+
+/* v17 final fixes before moving chat */
+html,
+body {
+  background-color: #050505 !important;
+}
+
+.brand img {
+  width: 38px !important;
+  height: 38px !important;
+  object-fit: contain !important;
+}
+
+.video-strip {
+  gap: 14px !important;
+}
+
+.video-slot {
+  flex: 0 0 calc((100% - 56px) / 5) !important;
+  height: 4.15cm !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0,0,0,.20) !important;
+  border: 1px solid rgba(255,255,255,.055) !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.video-link img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: rgba(0,0,0,.72) !important;
+  filter: grayscale(1) brightness(.74) contrast(1.03) !important;
+  opacity: .88 !important;
+}
+
+.video-link:hover img {
+  filter: grayscale(0) brightness(.96) contrast(1) !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+a.text-link,
+a.text-link:link,
+a.text-link:visited,
+a.text-link:active,
+a.text-link:focus,
+a.text-link:hover {
+  color: var(--aubergine) !important;
+  -webkit-text-fill-color: var(--aubergine) !important;
+  text-decoration: none !important;
+  border-bottom-color: rgba(139,95,130,.72) !important;
+  outline: none !important;
+}
+
+.site-footer,
+.social-footer {
+  display: none !important;
+}
+
+.contact-social {
+  width: min(1600px, calc(100vw - 56px));
+  margin: -18px auto 96px;
+  padding-left: clamp(48px, 6vw, 118px);
+  padding-right: clamp(48px, 6vw, 118px);
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 26px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.social-icon,
+.social-icon:link,
+.social-icon:visited,
+.social-icon:active,
+.social-icon:focus {
+  width: 28px;
+  height: 24px;
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--aubergine) !important;
+  -webkit-text-fill-color: var(--aubergine) !important;
+  opacity: .95;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.social-icon:hover {
+  color: #b584aa !important;
+  -webkit-text-fill-color: #b584aa !important;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.social-in span {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  text-transform: lowercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.social-yt span {
+  width: 22px;
+  height: 15px;
+  border-radius: 3px;
+  background: currentColor;
+  display: block;
+  position: relative;
+}
+
+.social-yt span::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 3.5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #050505;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.social-ig span {
+  width: 19px;
+  height: 19px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  display: block;
+  position: relative;
+}
+
+.social-ig span::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.social-ig span::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+@media (max-width: 860px) {
+  .contact-social {
+    width: calc(100vw - 28px);
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
