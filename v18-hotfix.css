@@ -1,0 +1,166 @@
+
+/* KOTLOVSKY PORTFOLIO — v18 hotfix
+   Do not replace the accepted slider glass/transparency.
+   This patch only fixes: footer/social icons, blue write-me, dark brick readability,
+   header logo crop/display, YouTube thumbnail fit.
+*/
+
+/* 1) Links: no default browser blue/purple anywhere in contact/footer */
+a,
+a:visited,
+a:hover,
+a:active,
+.write-me,
+.write-me:visited,
+.write-me:hover,
+.write-me:active,
+.contact a,
+.contact a:visited,
+.contact a:hover,
+.contact a:active,
+.footer a,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: #f4eef6;
+  text-decoration: none;
+}
+
+.write-me,
+.write-me:visited,
+.write-me:hover,
+.write-me:active {
+  color: #f4eef6 !important;
+  border-color: rgba(244, 238, 246, 0.42);
+  outline: none;
+}
+
+.write-me:focus-visible,
+.contact a:focus-visible,
+.footer a:focus-visible {
+  outline: 1px solid rgba(159, 90, 139, 0.85);
+  outline-offset: 4px;
+}
+
+/* 2) Social icons: neutral SVG/text icons, no red debug boxes, no red borders */
+.social-links,
+.contact-socials,
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 34px);
+  margin-top: 22px;
+}
+
+.social-link,
+.social-link:visited,
+.social-link:hover,
+.social-link:active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  color: #f4eef6 !important;
+  background: rgba(9, 7, 10, 0.22);
+  border: 1px solid rgba(244, 238, 246, 0.18) !important;
+  border-radius: 999px;
+  box-shadow: none !important;
+  overflow: visible;
+}
+
+.social-link svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-link:hover {
+  color: #ffffff !important;
+  border-color: rgba(159, 90, 139, 0.68) !important;
+  background: rgba(159, 90, 139, 0.18);
+  transform: translateY(-1px);
+}
+
+/* kill possible red placeholder/debug styles from older versions */
+.social-link::before,
+.social-link::after,
+.social-links a::before,
+.social-links a::after,
+.contact-socials a::before,
+.contact-socials a::after,
+.footer-socials a::before,
+.footer-socials a::after {
+  border-color: transparent !important;
+  background: transparent;
+}
+
+/* 3) Black brick: make visible without turning page grey.
+   Keep your existing background image URL; this only adds readable light/shadow layers. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255,255,255,0.055), transparent 32%),
+    radial-gradient(circle at 82% 8%, rgba(159,90,139,0.075), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.025), rgba(0,0,0,0.18));
+  mix-blend-mode: screen;
+}
+
+/* Optional: if your brick is an img/div background, add class="brick-bg" to that element. */
+.brick-bg,
+.black-brick,
+.site-bg {
+  filter: brightness(1.18) contrast(1.04);
+}
+
+/* 4) Header logo: use transparent cropped PNG and prevent white square / bad cut */
+.logo img,
+.brand img,
+.header-logo img,
+.site-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: transparent !important;
+  mix-blend-mode: normal;
+}
+
+/* 5) YouTube thumbnails: no cutting. Use full 16:9 thumbnail inside filmstrip card. */
+.video-card,
+.video-item,
+.video-slide {
+  overflow: visible;
+}
+
+.video-thumb,
+.youtube-thumb,
+.video-card img,
+.video-item img,
+.video-slide img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: rgba(0,0,0,0.34);
+  display: block;
+}
+
+/* If the thumbnail is applied as background-image instead of <img> */
+.video-thumb[style],
+.youtube-thumb[style] {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* The accepted slider glass/transparency is intentionally NOT overwritten here. */
