@@ -85,7 +85,7 @@ nav a:hover { color: #fff; }
 .first-section { padding-top: 108px; }
 
 .section-head {
-  width: min(1600px, calc(100vw - 48px));
+  width: min(1320px, calc(100vw - 220px));
   margin: 0 auto 42px;
 }
 
@@ -102,7 +102,7 @@ nav a:hover { color: #fff; }
 
 .section-head p {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 0 14px;
   color: rgba(255,255,255,.88);
   font-size: 11px;
@@ -115,45 +115,26 @@ nav a:hover { color: #fff; }
 
 .glass-panel {
   position: relative;
-  width: min(1600px, calc(100vw - 48px));
+  width: min(1600px, calc(100vw - 56px));
   margin: 0 auto;
-  padding: 28px 26px;
+  padding: 26px 26px;
   overflow: hidden;
-
-  /* glass veil: transparent, not a filled block */
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.070), rgba(255,255,255,.010)),
-    linear-gradient(90deg, rgba(0,0,0,.20), rgba(65,32,61,.18), rgba(0,0,0,.16));
-  border: 1px solid rgba(255,255,255,.10);
-
-  backdrop-filter: blur(12px) saturate(1.15);
-  -webkit-backdrop-filter: blur(12px) saturate(1.15);
-
-  box-shadow:
-    0 28px 86px rgba(0,0,0,.22),
-    inset 0 1px 0 rgba(255,255,255,.13),
-    inset 0 -1px 0 rgba(0,0,0,.22);
+  background: rgba(0, 0, 0, .30);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 24px 70px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.06);
 }
 .glass-panel::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 28% 0%, rgba(255,255,255,.09), transparent 18%),
-    radial-gradient(circle at 50% 50%, rgba(139,95,130,.13), transparent 46%),
-    linear-gradient(90deg, rgba(0,0,0,.16), transparent 20%, transparent 82%, rgba(0,0,0,.14));
-  opacity: .86;
+  background: linear-gradient(90deg, rgba(255,255,255,.035), transparent 18%, transparent 84%, rgba(255,255,255,.025));
+  opacity: .55;
 }
 .glass-panel::after {
-  content: "";
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  top: 10px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
-  opacity: .45;
+  display: none;
 }
 
 .filmstrip {
@@ -173,7 +154,7 @@ nav a:hover { color: #fff; }
 .strip-item {
   flex: 0 0 auto;
   display: block;
-  height: 5cm;
+  height: 4.5cm;
   padding: 0;
   margin: 0;
   border: 0;
@@ -182,7 +163,7 @@ nav a:hover { color: #fff; }
 }
 .strip-item img {
   display: block;
-  height: 5cm;
+  height: 4.5cm;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -199,21 +180,17 @@ nav a:hover { color: #fff; }
 }
 
 .paint-item,
-.paint-item img { height: 5cm; }
+.paint-item img { height: 4.5cm; }
 
 .video-strip { gap: 16px; }
 .video-slot {
-  flex: 0 0 360px;
-  height: 5cm;
+  flex: 0 0 calc((100% - 64px) / 5);
+  height: 4.5cm;
   display: grid;
   place-items: center;
   color: rgba(255,255,255,.72);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.050), rgba(255,255,255,.006)),
-    rgba(0,0,0,.12);
-  border: 1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0,0,0,.20);
+  border: 1px solid rgba(255,255,255,.08);
   overflow: hidden;
   text-decoration: none;
 }
@@ -319,24 +296,29 @@ nav a:hover { color: #fff; }
   transform: scale(1.025);
 }
 
-.text-link {
-  color: var(--aubergine);
+.text-link,
+.text-link:visited {
+  color: var(--aubergine) !important;
   text-decoration: none;
   border-bottom: 1px solid rgba(139,95,130,.55);
   padding-bottom: 2px;
 }
 
 .text-link:hover {
-  color: #b584aa;
+  color: #b584aa !important;
   border-bottom-color: #b584aa;
 }
 
 .site-footer {
-  width: min(1600px, calc(100vw - 48px));
-  margin: 40px auto 70px;
+  width: min(1600px, calc(100vw - 56px));
+  margin: 34px auto 76px;
   display: flex;
   justify-content: flex-end;
-  gap: 22px;
+  align-items: center;
+  gap: 24px;
+  border: 0;
+  background: transparent;
+  outline: none;
 }
 
 .site-footer a {
@@ -360,4 +342,8 @@ nav a:hover { color: #fff; }
   width: 20px;
   height: 20px;
   fill: currentColor;
+  display: block;
 }
+
+a:focus, button:focus { outline-color: rgba(139,95,130,.55); }
+.site-footer *, .site-footer *::before, .site-footer *::after { border-color: transparent; }
