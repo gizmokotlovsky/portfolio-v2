@@ -1,39 +1,60 @@
+const galleries = {};
+document.querySelectorAll('[data-gallery]').forEach((button) => {
+  const name = button.dataset.gallery;
+  if (!galleries[name]) galleries[name] = [];
+  const img = button.querySelector('img');
+  if (img && img.getAttribute('src')) {
+    const item = { src: img.getAttribute('src'), button };
+    galleries[name].push(item);
+    button.dataset.index = String(galleries[name].length - 1);
+  }
+});
 
-const galleries = window.KOTLOVSKY_GALLERIES || {};
 const lightbox = document.getElementById('lightbox');
-const image = lightbox.querySelector('.lightbox-image');
-const closeBtn = lightbox.querySelector('.lightbox-close');
-const prevBtn = lightbox.querySelector('.prev');
-const nextBtn = lightbox.querySelector('.next');
-let currentGallery = [];
+const lbImage = lightbox.querySelector('.lb-image');
+const closeBtn = lightbox.querySelector('.lb-close');
+const prevBtn = lightbox.querySelector('.lb-prev');
+const nextBtn = lightbox.querySelector('.lb-next');
+let currentGallery = 'graphics';
 let currentIndex = 0;
 
-function showImage(index) {
-  if (!currentGallery.length) return;
-  currentIndex = (index + currentGallery.length) % currentGallery.length;
-  image.src = currentGallery[currentIndex];
+function showCurrent() {
+  const list = galleries[currentGallery] || [];
+  if (!list.length) return;
+  if (currentIndex < 0) currentIndex = list.length - 1;
+  if (currentIndex >= list.length) currentIndex = 0;
+  lbImage.src = list[currentIndex].src;
 }
-function openGallery(name, index) {
-  currentGallery = galleries[name] || [];
-  showImage(index);
+
+function openLightbox(galleryName, index) {
+  currentGallery = galleryName;
+  currentIndex = Number(index) || 0;
+  showCurrent();
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden', 'false');
 }
-function closeGallery() {
+
+function closeLightbox() {
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden', 'true');
-  image.src = '';
+  lbImage.removeAttribute('src');
 }
-document.querySelectorAll('[data-gallery]').forEach(btn => {
-  btn.addEventListener('click', () => openGallery(btn.dataset.gallery, Number(btn.dataset.index || 0)));
+
+function nextImage() { currentIndex += 1; showCurrent(); }
+function prevImage() { currentIndex -= 1; showCurrent(); }
+
+document.querySelectorAll('[data-gallery]').forEach(button => {
+  button.addEventListener('click', () => openLightbox(button.dataset.gallery, button.dataset.index));
 });
-closeBtn.addEventListener('click', closeGallery);
-prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
-nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
-lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeGallery(); });
+
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
 document.addEventListener('keydown', (e) => {
   if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape') closeGallery();
-  if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-  if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') nextImage();
+  if (e.key === 'ArrowLeft') prevImage();
 });
