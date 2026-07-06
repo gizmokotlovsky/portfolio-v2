@@ -7,7 +7,7 @@
   <meta name="description" content="kotlovsky creative studio — graphics, audio, video and painting.">
   <style>
 /* =========================================================
-   KOTLOVSKY PORTFOLIO — v25 SINGLE FILE CSS
+   KOTLOVSKY PORTFOLIO — v28 SINGLE FILE CSS
    ========================================================= */
 
 :root {
@@ -796,7 +796,100 @@ a[href^="mailto:"]:hover {
   }
 }
 
-  </style>
+  
+/* =========================================================
+   v28 contact photo + square panels fix
+   ========================================================= */
+
+.contact-panel {
+  grid-template-columns: 150px minmax(360px, 760px) 150px !important;
+  width: var(--content-width) !important;
+  gap: 28px !important;
+  align-items: center !important;
+}
+
+.contact-logo,
+.contact-photo {
+  width: 150px !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.024), rgba(255,255,255,.006)),
+    rgba(0,0,0,.18) !important;
+  border: 1px solid rgba(255,255,255,.055) !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 18px 52px rgba(0,0,0,.12),
+    inset 0 0 0 1px rgba(255,255,255,.018) !important;
+}
+
+.contact-logo img {
+  width: 82px !important;
+  height: 82px !important;
+  object-fit: contain !important;
+  opacity: .92 !important;
+}
+
+.contact-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  filter: grayscale(1) saturate(.78) brightness(.84) contrast(1.03) !important;
+  opacity: .88 !important;
+  transition:
+    filter .25s ease,
+    opacity .25s ease,
+    transform .25s ease !important;
+}
+
+.contact-photo:hover img {
+  filter: grayscale(0) saturate(1.02) brightness(1) contrast(1) !important;
+  opacity: 1 !important;
+  transform: scale(1.025) !important;
+}
+
+.contact-copy {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.contact-copy p {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+.contact-social {
+  width: 100% !important;
+  margin: 26px auto 0 !important;
+  justify-content: center !important;
+  grid-column: 1 / -1 !important;
+}
+
+@media (max-width: 900px) {
+  .contact-panel {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .contact-logo,
+  .contact-photo {
+    width: 150px !important;
+    height: 150px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .contact-copy p {
+    text-align: left !important;
+  }
+}
+
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -822,64 +915,59 @@ a[href^="mailto:"]:hover {
         <div class="filmstrip" aria-label="graphics filmstrip">
           <button class="strip-item" type="button" data-gallery="graphics" data-index="0" aria-label="open graphics image"><img src="assets/graphics/002-elisa.jpg" alt=""></button>
           <button class="strip-item" type="button" data-gallery="graphics" data-index="1" aria-label="open graphics image"><img src="assets/graphics/005-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="2" aria-label="open graphics image"><img src="assets/graphics/006-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="3" aria-label="open graphics image"><img src="assets/graphics/007-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="4" aria-label="open graphics image"><img src="assets/graphics/008-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="5" aria-label="open graphics image"><img src="assets/graphics/013-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="6" aria-label="open graphics image"><img src="assets/graphics/015-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="7" aria-label="open graphics image"><img src="assets/graphics/016-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="8" aria-label="open graphics image"><img src="assets/graphics/017-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="9" aria-label="open graphics image"><img src="assets/graphics/018-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="10" aria-label="open graphics image"><img src="assets/graphics/019-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="11" aria-label="open graphics image"><img src="assets/graphics/021-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="12" aria-label="open graphics image"><img src="assets/graphics/023-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="13" aria-label="open graphics image"><img src="assets/graphics/024-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="14" aria-label="open graphics image"><img src="assets/graphics/025-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="15" aria-label="open graphics image"><img src="assets/graphics/026-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="16" aria-label="open graphics image"><img src="assets/graphics/027-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="17" aria-label="open graphics image"><img src="assets/graphics/028-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="18" aria-label="open graphics image"><img src="assets/graphics/029-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="19" aria-label="open graphics image"><img src="assets/graphics/030-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="20" aria-label="open graphics image"><img src="assets/graphics/031-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="21" aria-label="open graphics image"><img src="assets/graphics/032-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="22" aria-label="open graphics image"><img src="assets/graphics/033-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="23" aria-label="open graphics image"><img src="assets/graphics/034-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="24" aria-label="open graphics image"><img src="assets/graphics/035-bitwa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="25" aria-label="open graphics image"><img src="assets/graphics/036-bitwa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="26" aria-label="open graphics image"><img src="assets/graphics/037-beauty.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="27" aria-label="open graphics image"><img src="assets/graphics/039-beauty.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="28" aria-label="open graphics image"><img src="assets/graphics/040-beauty.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="29" aria-label="open graphics image"><img src="assets/graphics/041-lumaa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="30" aria-label="open graphics image"><img src="assets/graphics/042-lumaa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="31" aria-label="open graphics image"><img src="assets/graphics/044-lumaa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="32" aria-label="open graphics image"><img src="assets/graphics/045-sochas.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="33" aria-label="open graphics image"><img src="assets/graphics/047-sochas.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="34" aria-label="open graphics image"><img src="assets/graphics/048-sochas.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="35" aria-label="open graphics image"><img src="assets/graphics/049-confero.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="36" aria-label="open graphics image"><img src="assets/graphics/050-confero.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="37" aria-label="open graphics image"><img src="assets/graphics/052-follow.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="38" aria-label="open graphics image"><img src="assets/graphics/053-follow.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="39" aria-label="open graphics image"><img src="assets/graphics/055-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="40" aria-label="open graphics image"><img src="assets/graphics/056-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="41" aria-label="open graphics image"><img src="assets/graphics/057-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="42" aria-label="open graphics image"><img src="assets/graphics/058-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="43" aria-label="open graphics image"><img src="assets/graphics/059-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="44" aria-label="open graphics image"><img src="assets/graphics/060-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="45" aria-label="open graphics image"><img src="assets/graphics/061-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="46" aria-label="open graphics image"><img src="assets/graphics/062-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="47" aria-label="open graphics image"><img src="assets/graphics/063-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="48" aria-label="open graphics image"><img src="assets/graphics/064-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="49" aria-label="open graphics image"><img src="assets/graphics/065-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="50" aria-label="open graphics image"><img src="assets/graphics/066-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="51" aria-label="open graphics image"><img src="assets/graphics/067-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="52" aria-label="open graphics image"><img src="assets/graphics/068-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="53" aria-label="open graphics image"><img src="assets/graphics/069-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="54" aria-label="open graphics image"><img src="assets/graphics/070-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="55" aria-label="open graphics image"><img src="assets/graphics/071-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="56" aria-label="open graphics image"><img src="assets/graphics/072-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="57" aria-label="open graphics image"><img src="assets/graphics/073-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="58" aria-label="open graphics image"><img src="assets/graphics/074-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="59" aria-label="open graphics image"><img src="assets/graphics/075-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="2" aria-label="open graphics image"><img src="assets/graphics/007-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="3" aria-label="open graphics image"><img src="assets/graphics/008-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="4" aria-label="open graphics image"><img src="assets/graphics/013-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="5" aria-label="open graphics image"><img src="assets/graphics/015-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="6" aria-label="open graphics image"><img src="assets/graphics/016-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="7" aria-label="open graphics image"><img src="assets/graphics/017-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="8" aria-label="open graphics image"><img src="assets/graphics/018-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="9" aria-label="open graphics image"><img src="assets/graphics/019-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="10" aria-label="open graphics image"><img src="assets/graphics/021-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="11" aria-label="open graphics image"><img src="assets/graphics/023-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="12" aria-label="open graphics image"><img src="assets/graphics/024-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="13" aria-label="open graphics image"><img src="assets/graphics/025-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="14" aria-label="open graphics image"><img src="assets/graphics/026-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="15" aria-label="open graphics image"><img src="assets/graphics/027-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="16" aria-label="open graphics image"><img src="assets/graphics/028-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="17" aria-label="open graphics image"><img src="assets/graphics/029-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="18" aria-label="open graphics image"><img src="assets/graphics/030-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="19" aria-label="open graphics image"><img src="assets/graphics/031-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="20" aria-label="open graphics image"><img src="assets/graphics/032-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="21" aria-label="open graphics image"><img src="assets/graphics/033-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="22" aria-label="open graphics image"><img src="assets/graphics/034-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="23" aria-label="open graphics image"><img src="assets/graphics/035-bitwa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="24" aria-label="open graphics image"><img src="assets/graphics/036-bitwa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="25" aria-label="open graphics image"><img src="assets/graphics/037-beauty.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="26" aria-label="open graphics image"><img src="assets/graphics/039-beauty.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="27" aria-label="open graphics image"><img src="assets/graphics/040-beauty.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="28" aria-label="open graphics image"><img src="assets/graphics/041-lumaa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="29" aria-label="open graphics image"><img src="assets/graphics/042-lumaa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="30" aria-label="open graphics image"><img src="assets/graphics/044-lumaa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="31" aria-label="open graphics image"><img src="assets/graphics/045-sochas.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="32" aria-label="open graphics image"><img src="assets/graphics/047-sochas.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="33" aria-label="open graphics image"><img src="assets/graphics/048-sochas.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="34" aria-label="open graphics image"><img src="assets/graphics/049-confero.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="35" aria-label="open graphics image"><img src="assets/graphics/050-confero.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="36" aria-label="open graphics image"><img src="assets/graphics/052-follow.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="37" aria-label="open graphics image"><img src="assets/graphics/053-follow.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="38" aria-label="open graphics image"><img src="assets/graphics/055-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="39" aria-label="open graphics image"><img src="assets/graphics/056-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="40" aria-label="open graphics image"><img src="assets/graphics/057-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="41" aria-label="open graphics image"><img src="assets/graphics/058-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="42" aria-label="open graphics image"><img src="assets/graphics/059-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="43" aria-label="open graphics image"><img src="assets/graphics/060-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="44" aria-label="open graphics image"><img src="assets/graphics/061-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="45" aria-label="open graphics image"><img src="assets/graphics/062-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="46" aria-label="open graphics image"><img src="assets/graphics/063-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="47" aria-label="open graphics image"><img src="assets/graphics/065-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="48" aria-label="open graphics image"><img src="assets/graphics/066-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="49" aria-label="open graphics image"><img src="assets/graphics/069-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="50" aria-label="open graphics image"><img src="assets/graphics/070-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="51" aria-label="open graphics image"><img src="assets/graphics/071-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="52" aria-label="open graphics image"><img src="assets/graphics/073-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="53" aria-label="open graphics image"><img src="assets/graphics/074-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="54" aria-label="open graphics image"><img src="assets/graphics/075-food.jpg" alt=""></button>
         </div>
       </div>
     </section>
@@ -978,6 +1066,6 @@ a[href^="mailto:"]:hover {
     <button class="lb-nav lb-next" type="button" aria-label="next">›</button>
   </div>
 
-  <script src="script.js?v=25"></script>
+  <script src="script.js?v=28"></script>
 </body>
 </html>
