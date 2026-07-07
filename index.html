@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- KOTLOVSKY PORTFOLIO v37 FINAL CLEAN — AFTER DEBUG FILENAMES — 2026-07-07 -->
+<!-- KOTLOVSKY PORTFOLIO v38 FINAL HARD OVERRIDE — USER FILEMAP FIX -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -1191,7 +1191,7 @@ a[href^="mailto:"]:hover {
 
 </style>
 </head>
-<body data-kotlovsky-version="v37-final-clean">
+<body data-kotlovsky-version="v38-final-hard-override">
   <header class="site-header">
     <a class="brand" href="#top" aria-label="kotlovsky home">
       <img src="assets/logo/kotlovsky-cat.png" alt="kotlovsky logo">
@@ -1496,6 +1496,246 @@ a[href^="mailto:"]:hover {
       move(1);
     }
   });
+})();
+</script>
+
+
+<script id="kotlovsky-hard-dom-override">
+(function () {
+  function fileOf(button) {
+    const img = button && button.querySelector ? button.querySelector('img') : null;
+    if (!img) return '';
+    return (img.getAttribute('src') || '').split('/').pop();
+  }
+
+  function findButton(strip, filename) {
+    return Array.from(strip.querySelectorAll('button[data-gallery="graphics"]')).find(function (button) {
+      return fileOf(button) === filename;
+    });
+  }
+
+  function setMeta(button, title, category, description) {
+    if (!button) return;
+    button.setAttribute('data-title', title);
+    button.setAttribute('data-category', category);
+    button.setAttribute('data-description', description);
+  }
+
+  function reindex(strip) {
+    Array.from(strip.querySelectorAll('button[data-gallery="graphics"]')).forEach(function (button, index) {
+      button.setAttribute('data-index', String(index));
+    });
+  }
+
+  function removeFiles(strip, filenames) {
+    filenames.forEach(function (filename) {
+      const button = findButton(strip, filename);
+      if (button) button.remove();
+    });
+  }
+
+  function moveBefore(strip, movingFile, targetFile) {
+    const moving = findButton(strip, movingFile);
+    const target = findButton(strip, targetFile);
+    if (moving && target && moving !== target) {
+      strip.insertBefore(moving, target);
+    }
+  }
+
+  function moveAfter(strip, movingFile, targetFile) {
+    const moving = findButton(strip, movingFile);
+    const target = findButton(strip, targetFile);
+    if (moving && target && moving !== target) {
+      strip.insertBefore(moving, target.nextSibling);
+    }
+  }
+
+  function replaceLumaa(strip) {
+    const wrong044 = findButton(strip, '044-lumaa.jpg');
+    if (wrong044) wrong044.remove();
+
+    let lumaa = findButton(strip, '043-lumaa.jpg') || findButton(strip, '042-lumaa.jpg');
+
+    if (!lumaa) {
+      lumaa = document.createElement('button');
+      lumaa.className = 'strip-item';
+      lumaa.type = 'button';
+      lumaa.setAttribute('data-gallery', 'graphics');
+      lumaa.setAttribute('aria-label', 'open graphics image');
+      lumaa.innerHTML = '<img src="assets/graphics/043-lumaa.jpg" alt="">';
+
+      const anchor = findButton(strip, '040-beauty.jpg') || findButton(strip, '037-beauty.jpg');
+      if (anchor) strip.insertBefore(lumaa, anchor.nextSibling);
+      else strip.appendChild(lumaa);
+    }
+
+    const img = lumaa.querySelector('img');
+    if (img) {
+      img.setAttribute('src', 'assets/graphics/043-lumaa.jpg');
+      img.setAttribute('alt', 'Lumaa Family Office');
+    }
+
+    setMeta(
+      lumaa,
+      'Lumaa Family Office',
+      'Client work / brand materials',
+      'Selected visual material for the Lumaa Family Office communication system.'
+    );
+  }
+
+  function applyGraphicsCorrections() {
+    const strip = document.querySelector('[aria-label="graphics filmstrip"]');
+    if (!strip) return;
+
+    removeFiles(strip, [
+      '059-food.jpg',
+      '060-food.jpg',
+      '073-food.jpg',
+      '075-food.jpg',
+      '044-lumaa.jpg'
+    ]);
+
+    replaceLumaa(strip);
+
+    // 018 na miejsce 014: w aktywnej liście nie ma 014, więc ustawiam po 013 / przed 015.
+    moveBefore(strip, '018-elisa.jpg', '015-elisa.jpg');
+
+    // Leo / Sail for Leo przed 028.
+    moveBefore(strip, '023-sailbook.jpg', '028-sailbook.jpg');
+
+    // Lava Drops: zamiana 085 i 086.
+    moveBefore(strip, '086-lava-drops-interior.jpeg', '085-lava-drops-cookie.jpeg');
+
+    // Sailbook Cup descriptions: all wskazane materiały jako Sailbook Cup.
+    [
+      '024-sailbook.jpg',
+      '025-sailbook.jpg',
+      '026-sailbook.jpg',
+      '029-sailbook.jpg',
+      '030-sailbook.jpg',
+      '031-sailbook.jpg',
+      '032-sailbook.jpg'
+    ].forEach(function (file) {
+      setMeta(
+        findButton(strip, file),
+        'Sailbook Cup',
+        'Editorial and event work / regatta communication',
+        'Visual material connected to the Sailbook Cup sailing regatta and its event communication.'
+      );
+    });
+
+    // Dwa ostatnie z tej grupy: organizatorzy i uczestnicy.
+    setMeta(
+      findButton(strip, '033-sailbook.jpg') || findButton(strip, '025-sailbook.jpg'),
+      'Sailbook Cup Organizers',
+      'Event documentation / regatta organization',
+      'Documentation from the Sailbook Cup organization team and sailing event coordination.'
+    );
+
+    setMeta(
+      findButton(strip, '034-sailbook.jpg') || findButton(strip, '026-sailbook.jpg'),
+      'Sailbook Cup Participants',
+      'Event documentation / sailing community',
+      'Commemorative group photo of Sailbook Cup participants, organizers and sailing crews.'
+    );
+
+    // Specific items already defined earlier.
+    setMeta(
+      findButton(strip, '037-beauty.jpg'),
+      'Beauty Secrets',
+      'Client work / beauty brand identity',
+      'Logo and visual material for a beauty-related brand identity.'
+    );
+
+    setMeta(
+      findButton(strip, '045-sochas.jpg'),
+      'Evelina Kislych Sochas Photography',
+      'Client work / photography website',
+      'Web-facing visual material for photographer Evelina Kislych Sochas.'
+    );
+
+    setMeta(
+      findButton(strip, '047-sochas.jpg'),
+      'Evelina Kislych Sochas Photography',
+      'Client work / photography website',
+      'Website material for photographer Evelina Kislych Sochas.'
+    );
+
+    setMeta(
+      findButton(strip, '048-sochas.jpg'),
+      'Algirdas Šochas',
+      'Client work / musician biography and web presentation',
+      'Web and visual material for violinist Algirdas Šochas, presenting his international education, awards and orchestral experience.'
+    );
+
+    // Food materials: Elbfaire Cafe & Restaurant.
+    [
+      '061-food.jpg',
+      '062-food.jpg',
+      '063-food.jpg',
+      '065-food.jpg',
+      '066-food.jpg',
+      '069-food.jpg',
+      '070-food.jpg',
+      '071-food.jpg',
+      '074-food.jpg'
+    ].forEach(function (file) {
+      setMeta(
+        findButton(strip, file),
+        'Elbfaire Café & Restaurant — Food Visuals',
+        'Photography / food presentation',
+        'Food presentation visuals created for Elbfaire Café & Restaurant.'
+      );
+    });
+
+    reindex(strip);
+  }
+
+  function applyPaintingCorrections() {
+    const strip = document.querySelector('[aria-label="paint filmstrip"]');
+    if (!strip) return;
+
+    const paintings = [
+      ['001-hamburg.jpg', 'Loneliness in Hamburg', 'Painting / personal work', 'Acrylic on canvas, 100 × 70 cm.'],
+      ['002-dont-go.jpg', 'Don’t Go', 'Painting / personal work', 'Acrylic on canvas, 70 × 70 cm.'],
+      ['003-planets.jpg', 'Fear and Hope', 'Painting / personal work', 'Acrylic on canvas, 50 × 50 cm.'],
+      ['004-corporat.jpg', 'Corporat', 'Painting / personal work', 'Acrylic on canvas, 100 × 70 cm.'],
+      ['005-grey-abstract.jpg', 'Evil vs Evil', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['006-memories.jpg', 'Memories', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['007-music.jpg', 'You’re the Music', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['008-spell.jpg', 'Under Your Spell', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['009-eyes.jpg', 'Maszszliczneoczyicudownespojrzenie', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['010-joy.jpg', 'Joy', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['011-reverse.jpg', 'Reverse', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['012-wave.jpg', '7th Wave', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['013-would.jpg', 'Would', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.'],
+      ['014-point.jpg', 'Point of View', 'Painting / personal work', 'Acrylic on canvas, 40 × 30 cm.']
+    ];
+
+    Array.from(strip.querySelectorAll('button[data-gallery="paint"]')).forEach(function (button, index) {
+      const img = button.querySelector('img');
+      const filename = img ? (img.getAttribute('src') || '').split('/').pop() : '';
+      const item = paintings.find(function (row) { return row[0] === filename; }) || paintings[index];
+      if (!item) return;
+      button.setAttribute('data-title', item[1]);
+      button.setAttribute('data-category', item[2]);
+      button.setAttribute('data-description', item[3]);
+      button.setAttribute('data-index', String(index));
+    });
+  }
+
+  function runKotlovskyCorrections() {
+    applyGraphicsCorrections();
+    applyPaintingCorrections();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runKotlovskyCorrections);
+  } else {
+    runKotlovskyCorrections();
+  }
+
+  window.addEventListener('load', runKotlovskyCorrections);
 })();
 </script>
 
