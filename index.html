@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- KOTLOVSKY PORTFOLIO v46 FORCE MOBILE INLINE HEADER FIX -->
+<!-- KOTLOVSKY PORTFOLIO v47 FINAL VIDEO + GLOBAL COMPACT HEADER -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -1202,65 +1202,146 @@ a[href^="mailto:"]:hover {
 }
 
 
-/* ===== v46 FORCE MOBILE FALLBACK ===== */
-@media screen and (max-width: 900px) {
-  body .site-header {
+/* ===== v47 GLOBAL COMPACT HEADER ===== */
+.site-header {
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 18px !important;
+  gap: 16px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.site-header .brand,
+.brand {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  max-width: calc(100vw - 170px) !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.site-header .brand img,
+.brand img {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  max-width: 34px !important;
+  flex: 0 0 34px !important;
+  margin-right: 10px !important;
+}
+
+.site-header .brand span,
+.brand span {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  line-height: 1 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.site-header .brand strong,
+.brand strong {
+  display: block !important;
+  max-width: 100% !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  letter-spacing: .22em !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.site-header .brand small,
+.brand small {
+  display: block !important;
+  max-width: 100% !important;
+  margin-top: 0 !important;
+  font-size: 7px !important;
+  line-height: 1 !important;
+  letter-spacing: .16em !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.site-header nav,
+nav {
+  flex: 0 0 auto !important;
+  gap: 18px !important;
+  margin-left: auto !important;
+  min-width: 0 !important;
+}
+
+.site-header nav a,
+nav a {
+  font-size: 10px !important;
+  letter-spacing: .18em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 430px) {
+  .site-header {
     height: 50px !important;
     min-height: 50px !important;
     padding: 0 8px !important;
     gap: 6px !important;
-    overflow: hidden !important;
   }
-  body .site-header .brand {
+
+  .site-header .brand,
+  .brand {
     max-width: calc(100vw - 104px) !important;
-    overflow: hidden !important;
   }
-  body .site-header .brand img {
+
+  .site-header .brand img,
+  .brand img {
     width: 22px !important;
     height: 22px !important;
     min-width: 22px !important;
     max-width: 22px !important;
+    flex-basis: 22px !important;
     margin-right: 5px !important;
   }
-  body .site-header .brand span {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1px !important;
-    line-height: 1 !important;
-    overflow: hidden !important;
-  }
-  body .site-header .brand strong {
-    font-size: 8.5px !important;
+
+  .site-header .brand strong,
+  .brand strong {
+    font-size: 8.4px !important;
     letter-spacing: .11em !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
   }
-  body .site-header .brand small {
+
+  .site-header .brand small,
+  .brand small {
     font-size: 5.6px !important;
     letter-spacing: .08em !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
   }
-  body .site-header nav {
+
+  .site-header nav,
+  nav {
     gap: 6px !important;
-    margin-left: 4px !important;
   }
-  body .site-header nav a {
+
+  .site-header nav a,
+  nav a {
     font-size: 7.2px !important;
     letter-spacing: .065em !important;
-    line-height: 1 !important;
   }
-  body .section-head p,
-  body .section p,
-  body .contact p {
+
+  .section-head p,
+  .section p,
+  .contact p {
     text-align: justify !important;
     text-align-last: left !important;
+    hyphens: auto !important;
   }
 }
 
 </style>
 </head>
-<body data-kotlovsky-version="v46-force-mobile-inline-header-fix">
+<body data-kotlovsky-version="v47-final-video-global-compact-header">
   <header class="site-header">
     <a class="brand" href="#top" aria-label="kotlovsky home">
       <img src="assets/logo/kotlovsky-cat.png" alt="kotlovsky logo">
@@ -1385,8 +1466,8 @@ a[href^="mailto:"]:hover {
             <img src="https://img.youtube.com/vi/Lq7xif8Rztg/mqdefault.jpg" alt="">
           </a>
 
-          <a class="video-slot video-link" href="https://youtu.be/_O7cEuTJOS4" target="_blank" rel="noopener" aria-label="SailBook Cup PROMO">
-            <img src="https://img.youtube.com/vi/_O7cEuTJOS4/mqdefault.jpg" alt="">
+          <a class="video-slot video-link" href="https://youtu.be/xSo8flAM9hM" target="_blank" rel="noopener" aria-label="SailBook Cup PROMO">
+            <img src="https://img.youtube.com/vi/xSo8flAM9hM/mqdefault.jpg" alt="">
           </a>
           <a class="video-slot video-link" href="https://youtu.be/il9GkQmBkwg" target="_blank" rel="noopener" aria-label="SailBook Cup 2013">
             <img src="https://img.youtube.com/vi/il9GkQmBkwg/mqdefault.jpg" alt="">
@@ -1586,113 +1667,5 @@ a[href^="mailto:"]:hover {
   });
 })();
 </script>
-
-<script id="kotlovsky-mobile-force">
-(function () {
-  function setStyles(el, styles) {
-    if (!el) return;
-    Object.keys(styles).forEach(function (key) {
-      el.style.setProperty(key, styles[key], 'important');
-    });
-  }
-
-  function applyMobileHeader() {
-    var isMobile = window.innerWidth <= 900;
-    var header = document.querySelector('.site-header');
-    var brand = document.querySelector('.site-header .brand');
-    var logo = document.querySelector('.site-header .brand img');
-    var brandSpan = document.querySelector('.site-header .brand span');
-    var brandStrong = document.querySelector('.site-header .brand strong');
-    var brandSmall = document.querySelector('.site-header .brand small');
-    var nav = document.querySelector('.site-header nav');
-    var navLinks = document.querySelectorAll('.site-header nav a');
-
-    if (!isMobile) return;
-
-    setStyles(header, {
-      'height': '50px',
-      'min-height': '50px',
-      'padding': '0 8px',
-      'gap': '6px',
-      'overflow': 'hidden',
-      'box-sizing': 'border-box'
-    });
-
-    setStyles(brand, {
-      'max-width': 'calc(100vw - 104px)',
-      'min-width': '0',
-      'flex': '1 1 auto',
-      'overflow': 'hidden',
-      'white-space': 'nowrap'
-    });
-
-    setStyles(logo, {
-      'width': '22px',
-      'height': '22px',
-      'min-width': '22px',
-      'max-width': '22px',
-      'margin-right': '5px',
-      'flex': '0 0 22px'
-    });
-
-    setStyles(brandSpan, {
-      'display': 'flex',
-      'flex-direction': 'column',
-      'align-items': 'flex-start',
-      'gap': '1px',
-      'line-height': '1',
-      'overflow': 'hidden'
-    });
-
-    setStyles(brandStrong, {
-      'font-size': '8.5px',
-      'letter-spacing': '.11em',
-      'line-height': '1',
-      'white-space': 'nowrap'
-    });
-
-    setStyles(brandSmall, {
-      'font-size': '5.6px',
-      'letter-spacing': '.08em',
-      'line-height': '1',
-      'white-space': 'nowrap',
-      'margin-top': '0'
-    });
-
-    setStyles(nav, {
-      'gap': '6px',
-      'margin-left': '4px',
-      'flex': '0 0 auto'
-    });
-
-    navLinks.forEach(function (a) {
-      setStyles(a, {
-        'font-size': '7.2px',
-        'letter-spacing': '.065em',
-        'line-height': '1',
-        'padding': '0',
-        'white-space': 'nowrap'
-      });
-    });
-
-    document.querySelectorAll('.section-head p, .section p, .contact p').forEach(function (p) {
-      setStyles(p, {
-        'text-align': 'justify',
-        'text-align-last': 'left'
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyMobileHeader);
-  } else {
-    applyMobileHeader();
-  }
-
-  window.addEventListener('load', applyMobileHeader);
-  window.addEventListener('resize', applyMobileHeader);
-})();
-</script>
-
 </body>
 </html>
