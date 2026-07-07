@@ -1116,6 +1116,79 @@ a[href^="mailto:"]:hover {
   .contact-copy { max-width: 100% !important; }
 }
 
+
+/* ===== v31 graphics update + lightbox captions ===== */
+.section-head {
+  margin-bottom: 46px !important;
+}
+.section-head h1,
+.section-head h2 {
+  margin-bottom: 30px !important;
+}
+.section-head p,
+.section p,
+.contact-copy p {
+  line-height: 1.84 !important;
+}
+.glass-panel {
+  margin-top: 8px !important;
+}
+.filmstrip {
+  gap: 20px !important;
+}
+.video-strip {
+  gap: 18px !important;
+}
+
+.lightbox {
+  flex-direction: column !important;
+  gap: 18px !important;
+  padding: 56px 72px 42px !important;
+}
+.lb-caption {
+  width: min(92vw, 980px);
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255,255,255,.88);
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+.lb-title {
+  color: #8b5f82;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  margin-bottom: 6px;
+}
+.lb-category {
+  color: rgba(255,255,255,.58);
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: .10em;
+  margin-bottom: 8px;
+}
+.lb-description {
+  color: rgba(255,255,255,.80);
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: .08em;
+  max-width: 820px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .lightbox {
+    padding: 48px 20px 32px !important;
+  }
+  .lb-title {
+    font-size: 13px;
+  }
+  .lb-category,
+  .lb-description {
+    font-size: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1140,54 +1213,71 @@ a[href^="mailto:"]:hover {
 
       <div class="glass-panel">
         <div class="filmstrip" aria-label="graphics filmstrip">
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="0" aria-label="open graphics image"><img src="assets/graphics/002-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="1" aria-label="open graphics image"><img src="assets/graphics/005-elisa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="2" aria-label="open graphics image"><img src="assets/graphics/019-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="3" aria-label="open graphics image"><img src="assets/graphics/021-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="4" aria-label="open graphics image"><img src="assets/graphics/023-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="5" aria-label="open graphics image"><img src="assets/graphics/024-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="6" aria-label="open graphics image"><img src="assets/graphics/025-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="7" aria-label="open graphics image"><img src="assets/graphics/026-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="8" aria-label="open graphics image"><img src="assets/graphics/027-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="9" aria-label="open graphics image"><img src="assets/graphics/028-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="10" aria-label="open graphics image"><img src="assets/graphics/029-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="11" aria-label="open graphics image"><img src="assets/graphics/030-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="12" aria-label="open graphics image"><img src="assets/graphics/031-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="13" aria-label="open graphics image"><img src="assets/graphics/032-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="14" aria-label="open graphics image"><img src="assets/graphics/033-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="15" aria-label="open graphics image"><img src="assets/graphics/034-sailbook.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="16" aria-label="open graphics image"><img src="assets/graphics/035-bitwa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="17" aria-label="open graphics image"><img src="assets/graphics/036-bitwa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="18" aria-label="open graphics image"><img src="assets/graphics/037-beauty.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="19" aria-label="open graphics image"><img src="assets/graphics/039-beauty.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="20" aria-label="open graphics image"><img src="assets/graphics/040-beauty.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="21" aria-label="open graphics image"><img src="assets/graphics/041-lumaa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="22" aria-label="open graphics image"><img src="assets/graphics/042-lumaa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="23" aria-label="open graphics image"><img src="assets/graphics/044-lumaa.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="24" aria-label="open graphics image"><img src="assets/graphics/045-sochas.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="25" aria-label="open graphics image"><img src="assets/graphics/047-sochas.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="26" aria-label="open graphics image"><img src="assets/graphics/048-sochas.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="27" aria-label="open graphics image"><img src="assets/graphics/049-confero.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="28" aria-label="open graphics image"><img src="assets/graphics/050-confero.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="29" aria-label="open graphics image"><img src="assets/graphics/052-follow.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="30" aria-label="open graphics image"><img src="assets/graphics/053-follow.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="31" aria-label="open graphics image"><img src="assets/graphics/055-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="32" aria-label="open graphics image"><img src="assets/graphics/056-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="33" aria-label="open graphics image"><img src="assets/graphics/057-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="34" aria-label="open graphics image"><img src="assets/graphics/058-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="35" aria-label="open graphics image"><img src="assets/graphics/059-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="36" aria-label="open graphics image"><img src="assets/graphics/060-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="37" aria-label="open graphics image"><img src="assets/graphics/061-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="38" aria-label="open graphics image"><img src="assets/graphics/062-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="39" aria-label="open graphics image"><img src="assets/graphics/063-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="40" aria-label="open graphics image"><img src="assets/graphics/065-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="41" aria-label="open graphics image"><img src="assets/graphics/066-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="42" aria-label="open graphics image"><img src="assets/graphics/069-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="43" aria-label="open graphics image"><img src="assets/graphics/070-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="44" aria-label="open graphics image"><img src="assets/graphics/071-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="45" aria-label="open graphics image"><img src="assets/graphics/073-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="46" aria-label="open graphics image"><img src="assets/graphics/074-food.jpg" alt=""></button>
-          <button class="strip-item" type="button" data-gallery="graphics" data-index="47" aria-label="open graphics image"><img src="assets/graphics/075-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="0" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/002-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="1" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/006-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="2" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/007-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="3" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/013-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="4" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/015-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="5" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/016-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="6" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/017-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="7" data-title="Elisa Konditorei &amp; Café" data-category="Client work / visual identity" data-description="Logo and visual materials for a café brand, developed across storefront and print applications." aria-label="open graphics image"><img src="assets/graphics/018-elisa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="8" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/019-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="9" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/021-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="10" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/023-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="11" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/024-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="12" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/025-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="13" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/026-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="14" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/027-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="15" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/028-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="16" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/029-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="17" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/030-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="18" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/031-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="19" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/032-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="20" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/033-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="21" data-title="Sailbook.pl" data-category="Editorial and event work / portal identity" data-description="Visual materials connected to a sailing portal where Aleksandra worked as an editor and regatta organizer." aria-label="open graphics image"><img src="assets/graphics/034-sailbook.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="22" data-title="Kotlovsky Kids" data-category="AI-assisted educational concept / moodboard" data-description="Moodboard for a child-friendly media literacy concept built around noir storytelling and visual learning." aria-label="open graphics image"><img src="assets/graphics/076-kotlovsky-kids-moodboard.png" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="23" data-title="Kotlovsky Kids" data-category="AI-assisted educational concept / storyboard" data-description="Storyboard structure for an educational video concept about trust, digital content and critical viewing." aria-label="open graphics image"><img src="assets/graphics/077-kotlovsky-kids-storyboard.png" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="24" data-title="Axel Creative Designer" data-category="AI-assisted character branding concept" data-description="Character-based identity concept for a digital creative persona working across video, sound and visual design." aria-label="open graphics image"><img src="assets/graphics/078-axel-creative-designer.png" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="25" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/079-lava-drops-packshot.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="26" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/080-lava-drops-road.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="27" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/081-lava-drops-coals.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="28" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/082-lava-drops-eruption.png" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="29" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/083-lava-drops-man.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="30" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/084-lava-drops-raspberry-lava.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="31" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/085-lava-drops-cookie.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="32" data-title="Lava Drops" data-category="AI-assisted product concept / visual direction" data-description="Premium dessert concept built around molten raspberry filling, volcanic textures and cinematic product imagery." aria-label="open graphics image"><img src="assets/graphics/086-lava-drops-interior.jpeg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="33" data-title="Kotlovsky Visual Enrichment System" data-category="AI-assisted interface concept / visual system" data-description="Concept interface for layered visual enrichment, designed as a cinematic tool for creative scene development." aria-label="open graphics image"><img src="assets/graphics/087-kotlovsky-visual-enrichment-system.png" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="34" data-title="Kotlovsky AI" data-category="Interface concept / AI workflow design" data-description="Prototype screen for a branded AI workspace focused on creative workflow and content strategy." aria-label="open graphics image"><img src="assets/graphics/088-kotlovsky-ai-interface.png" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="35" data-title="Historical Visual Work" data-category="Graphic design / cultural materials" data-description="Visual material created around a historical or cultural communication context." aria-label="open graphics image"><img src="assets/graphics/035-bitwa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="36" data-title="Historical Visual Work" data-category="Graphic design / cultural materials" data-description="Visual material created around a historical or cultural communication context." aria-label="open graphics image"><img src="assets/graphics/036-bitwa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="37" data-title="Beauty Visual Materials" data-category="Graphic design / visual communication" data-description="Selected visual materials developed for a beauty-related communication context." aria-label="open graphics image"><img src="assets/graphics/037-beauty.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="38" data-title="Beauty Visual Materials" data-category="Graphic design / visual communication" data-description="Selected visual materials developed for a beauty-related communication context." aria-label="open graphics image"><img src="assets/graphics/039-beauty.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="39" data-title="Beauty Visual Materials" data-category="Graphic design / visual communication" data-description="Selected visual materials developed for a beauty-related communication context." aria-label="open graphics image"><img src="assets/graphics/040-beauty.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="40" data-title="Lumaa" data-category="Client work / brand and visual materials" data-description="Visual materials created for a small brand communication system." aria-label="open graphics image"><img src="assets/graphics/041-lumaa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="41" data-title="Lumaa" data-category="Client work / brand and visual materials" data-description="Visual materials created for a small brand communication system." aria-label="open graphics image"><img src="assets/graphics/042-lumaa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="42" data-title="Lumaa" data-category="Client work / brand and visual materials" data-description="Visual materials created for a small brand communication system." aria-label="open graphics image"><img src="assets/graphics/044-lumaa.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="43" data-title="Sochas" data-category="Client work / brand materials" data-description="Graphic materials prepared for a local brand or service communication." aria-label="open graphics image"><img src="assets/graphics/045-sochas.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="44" data-title="Sochas" data-category="Client work / brand materials" data-description="Graphic materials prepared for a local brand or service communication." aria-label="open graphics image"><img src="assets/graphics/047-sochas.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="45" data-title="Sochas" data-category="Client work / brand materials" data-description="Graphic materials prepared for a local brand or service communication." aria-label="open graphics image"><img src="assets/graphics/048-sochas.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="46" data-title="Confero" data-category="Client work / graphic materials" data-description="Selected communication materials created for a client-facing visual identity." aria-label="open graphics image"><img src="assets/graphics/049-confero.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="47" data-title="Confero" data-category="Client work / graphic materials" data-description="Selected communication materials created for a client-facing visual identity." aria-label="open graphics image"><img src="assets/graphics/050-confero.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="48" data-title="Follow" data-category="Graphic design / brand materials" data-description="Visual materials prepared as part of a brand or communication concept." aria-label="open graphics image"><img src="assets/graphics/052-follow.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="49" data-title="Follow" data-category="Graphic design / brand materials" data-description="Visual materials prepared as part of a brand or communication concept." aria-label="open graphics image"><img src="assets/graphics/053-follow.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="50" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/057-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="51" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/058-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="52" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/059-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="53" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/060-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="54" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/061-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="55" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/062-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="56" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/063-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="57" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/065-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="58" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/066-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="59" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/069-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="60" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/070-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="61" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/071-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="62" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/073-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="63" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/074-food.jpg" alt=""></button>
+          <button class="strip-item" type="button" data-gallery="graphics" data-index="64" data-title="Food Visuals" data-category="Photography / food presentation" data-description="Selected food presentation images from earlier visual and culinary work." aria-label="open graphics image"><img src="assets/graphics/075-food.jpg" alt=""></button>
         </div>
       </div>
     </section>
@@ -1216,7 +1306,7 @@ a[href^="mailto:"]:hover {
           <a class="video-slot video-link" href="https://youtu.be/m-pNr8lumU4?si=RvuwP81NI2jrnlyj" target="_blank" rel="noopener" aria-label="open video">
             <img src="https://img.youtube.com/vi/m-pNr8lumU4/mqdefault.jpg" alt="">
           </a>
-          <a class="video-slot video-link" href="https://www.youtube.com/watch?v=30E87DuGpZ84" target="_blank" rel="noopener" aria-label="open video">
+          <a class="video-slot video-link" href="https://www.youtube.com/watch?v=9E87DuGpZ84" target="_blank" rel="noopener" aria-label="open video">
             <img src="https://img.youtube.com/vi/9E87DuGpZ84/mqdefault.jpg" alt="">
           </a>
           <a class="video-slot video-link" href="https://youtu.be/Lq7xif8Rztg?si=Lkh-HkV850WkHpKM" target="_blank" rel="noopener" aria-label="open video">
@@ -1234,20 +1324,20 @@ a[href^="mailto:"]:hover {
 
       <div class="glass-panel">
         <div class="filmstrip" aria-label="paint filmstrip">
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="0" aria-label="open paint image"><img src="assets/paint/001-hamburg.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="1" aria-label="open paint image"><img src="assets/paint/002-dont-go.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="2" aria-label="open paint image"><img src="assets/paint/003-planets.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="3" aria-label="open paint image"><img src="assets/paint/004-corporat.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="4" aria-label="open paint image"><img src="assets/paint/005-grey-abstract.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="5" aria-label="open paint image"><img src="assets/paint/006-memories.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="6" aria-label="open paint image"><img src="assets/paint/007-music.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="7" aria-label="open paint image"><img src="assets/paint/008-spell.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="8" aria-label="open paint image"><img src="assets/paint/009-eyes.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="9" aria-label="open paint image"><img src="assets/paint/010-joy.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="10" aria-label="open paint image"><img src="assets/paint/011-reverse.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="11" aria-label="open paint image"><img src="assets/paint/012-wave.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="12" aria-label="open paint image"><img src="assets/paint/013-would.jpg" alt=""></button>
-          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="13" aria-label="open paint image"><img src="assets/paint/014-point.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="0" data-title="Hamburg" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/001-hamburg.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="1" data-title="Don’t Go" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/002-dont-go.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="2" data-title="Planets" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/003-planets.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="3" data-title="Corporate" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/004-corporat.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="4" data-title="Grey Abstract" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/005-grey-abstract.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="5" data-title="Memories" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/006-memories.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="6" data-title="Music" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/007-music.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="7" data-title="Spell" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/008-spell.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="8" data-title="Eyes" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/009-eyes.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="9" data-title="Joy" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/010-joy.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="10" data-title="Reverse" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/011-reverse.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="11" data-title="Wave" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/012-wave.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="12" data-title="Would" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/013-would.jpg" alt=""></button>
+          <button class="strip-item paint-item" type="button" data-gallery="paint" data-index="13" data-title="Point" data-category="Painting / personal work" data-description="Personal painting from the current painting section."" aria-label="open paint image"><img src="assets/paint/014-point.jpg" alt=""></button>
         </div>
       </div>
     </section>
@@ -1283,9 +1373,131 @@ a[href^="mailto:"]:hover {
     <button class="lb-close" type="button" aria-label="close">×</button>
     <button class="lb-nav lb-prev" type="button" aria-label="previous">‹</button>
     <img class="lb-image" alt="">
+    <div class="lb-caption" aria-live="polite">
+      <div class="lb-title"></div>
+      <div class="lb-category"></div>
+      <div class="lb-description"></div>
+    </div>
     <button class="lb-nav lb-next" type="button" aria-label="next">›</button>
   </div>
 
-  <script src="script.js?v=30"></script>
+  <script src="script.js?v=31"></script>
+
+<script>
+(function () {
+  const galleries = {};
+  let activeGallery = null;
+  let activeIndex = 0;
+
+  function collect() {
+    Object.keys(galleries).forEach(key => delete galleries[key]);
+    document.querySelectorAll('[data-gallery]').forEach((btn) => {
+      const gallery = btn.getAttribute('data-gallery');
+      const img = btn.querySelector('img');
+      if (!gallery || !img) return;
+      if (!galleries[gallery]) galleries[gallery] = [];
+      galleries[gallery].push({
+        button: btn,
+        src: img.getAttribute('src'),
+        alt: img.getAttribute('alt') || '',
+        title: btn.getAttribute('data-title') || '',
+        category: btn.getAttribute('data-category') || '',
+        description: btn.getAttribute('data-description') || ''
+      });
+    });
+  }
+
+  function captionNodes() {
+    return {
+      title: document.querySelector('.lb-title'),
+      category: document.querySelector('.lb-category'),
+      description: document.querySelector('.lb-description')
+    };
+  }
+
+  function render() {
+    const lb = document.getElementById('lightbox');
+    const img = lb ? lb.querySelector('.lb-image') : null;
+    if (!lb || !img || !activeGallery || !galleries[activeGallery]) return;
+
+    const items = galleries[activeGallery];
+    const item = items[activeIndex];
+    if (!item) return;
+
+    img.src = item.src;
+    img.alt = item.alt || item.title || '';
+
+    const nodes = captionNodes();
+    if (nodes.title) nodes.title.textContent = item.title || '';
+    if (nodes.category) nodes.category.textContent = item.category || '';
+    if (nodes.description) nodes.description.textContent = item.description || '';
+
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+
+  function openFrom(button) {
+    collect();
+    activeGallery = button.getAttribute('data-gallery');
+    const items = galleries[activeGallery] || [];
+    activeIndex = items.findIndex(item => item.button === button);
+    if (activeIndex < 0) activeIndex = Number(button.getAttribute('data-index')) || 0;
+    render();
+  }
+
+  function close() {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+  }
+
+  function step(delta) {
+    if (!activeGallery || !galleries[activeGallery]) return;
+    const items = galleries[activeGallery];
+    activeIndex = (activeIndex + delta + items.length) % items.length;
+    render();
+  }
+
+  document.addEventListener('click', function (event) {
+    const btn = event.target.closest('button[data-gallery]');
+    if (btn) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+      openFrom(btn);
+      return;
+    }
+
+    if (event.target.closest('.lb-close')) {
+      event.preventDefault();
+      close();
+      return;
+    }
+    if (event.target.closest('.lb-prev')) {
+      event.preventDefault();
+      step(-1);
+      return;
+    }
+    if (event.target.closest('.lb-next')) {
+      event.preventDefault();
+      step(1);
+      return;
+    }
+    if (event.target.id === 'lightbox') {
+      close();
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (event) {
+    const lb = document.getElementById('lightbox');
+    if (!lb || !lb.classList.contains('open')) return;
+    if (event.key === 'Escape') close();
+    if (event.key === 'ArrowLeft') step(-1);
+    if (event.key === 'ArrowRight') step(1);
+  });
+})();
+</script>
+
 </body>
 </html>
